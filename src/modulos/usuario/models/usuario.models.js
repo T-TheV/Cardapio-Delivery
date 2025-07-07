@@ -13,7 +13,7 @@ const Usuario = sequelize.define(
             primaryKey: true,
             validate: {
                 is: {
-                    args: /^\d{4}[A-Z]$/, 
+                     args: /^[A-Za-z]\d{4}$/,
                     msg: "Só é possível inserir 1 letra maiuscula e 4 digitos númericos"
                 }
             }
@@ -31,7 +31,7 @@ const Usuario = sequelize.define(
             allowNull: false,
             validate: {
                 is: {
-                    args: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                    args: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/,
                     msg: 'A senha deve ter no mínimo 8 caracteres, com letra maiúscula, minúscula, número e caractere especial.'
                 }
             }

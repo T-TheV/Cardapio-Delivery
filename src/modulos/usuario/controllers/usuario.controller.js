@@ -12,7 +12,7 @@ class UsuarioController {
             await Usuario.create({ nome, id, email, senha: senhaCriptografada })
             res.status(200).json({msg: 'Usuario cadastrado com sucesso' })
         } catch (error) {
-            res.status(500).json({ msg: "Erro ao cadastrar um novo usuario. Tente novamente mais tarde!"})
+            res.status(500).json({ msg: "Erro ao cadastrar um novo usuario. Tente novamente mais tarde!", erro: error.message})
         }
     }
 
